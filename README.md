@@ -9,6 +9,7 @@ A suite of automated end-to-end (E2E) tests written in [Playwright](https://play
 This test suite covers the following functionalities, using Page Object Model approach:
 
 - **Authentication** – Login flow and error handling
+- **Dropdown** – Option selection and state verification
 
 ---
 
