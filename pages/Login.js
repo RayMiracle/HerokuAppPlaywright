@@ -12,6 +12,7 @@ export class loginPage {
         this.usernameInput = page.getByRole('textbox', { name: 'Username' });
         this.passwordInput = page.getByRole('textbox', { name: 'Password' });
         this.loginButton = page.getByRole('button', { name: ' Login' });
+        this.flashErrorMessage = page.locator('.flash.error');
     }
 
     // This method checks if the login page is displayed correctly.
@@ -29,5 +30,19 @@ export class loginPage {
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
         await this.loginButton.click();
+    }
+
+    // This method checks if the login attempt with an invalid username is handled correctly.
+    async checkLoginUsernameInvalid() {
+        await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/login');
+        await expect(this.loginPageHeader).toHaveText('Login Page');
+        await expect(this.flashErrorMessage).toContainText('Your username is invalid!');
+    }
+
+    // This method checks if the login attempt with an invalid password is handled correctly.
+    async checkLoginPasswordInvalid() {
+        await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/login');
+        await expect(this.loginPageHeader).toHaveText('Login Page');
+        await expect(this.flashErrorMessage).toContainText('Your password is invalid!');
     }
 }
