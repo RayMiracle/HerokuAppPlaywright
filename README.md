@@ -6,9 +6,9 @@ A suite of automated end-to-end (E2E) tests written in [Playwright](https://play
 
 ## 🧪 Tested Features
 
-This test suite covers the following functionalities:
+This test suite covers the following functionalities, using Page Object Model approach:
 
-- **Authentication** – Login flow using Page Object Model approach
+- **Authentication** – Login flow and error handling
 
 ---
 
