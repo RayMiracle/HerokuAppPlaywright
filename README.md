@@ -11,6 +11,7 @@ This test suite covers the following functionalities, using Page Object Model ap
 - **Authentication** – Login flow and error handling
 - **Dropdown** – Option selection and state verification
 - **Dynamic Controls** – Add/remove elements and enable/disable inputs
+- **Modal Window** – Modal interaction and visibility checks
 
 ---
 

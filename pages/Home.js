@@ -1,14 +1,15 @@
 // This file defines the Home page object for the test suite.
-// It contains methods to interact with the home page elements and perform actions like navigating to the authentication form, dropdown list and dynamic controls.
+// It contains methods to interact with the elements on the home page of the application.
 export class homePage {
 
     // The constructor initializes the page object with the Playwright page instance
-    // and locates the link to the Form Authentication page, the Dropdown link and the Dynamic Controls link.
+    // and sets up locators for the links to different pages.
     constructor(page) {
         this.page = page;
         this.formAuthenticationLink = page.getByRole('link', { name: 'Form Authentication' });
         this.dropdownLink = page.getByRole('link', { name: 'Dropdown' });
         this.dynamicControlsLink = page.getByRole('link', { name: 'Dynamic Controls' });
+        this.entryAdLink = page.getByRole('link', { name: 'Entry Ad' });
     }
 
     // This method navigates to the home page of the application.
@@ -34,4 +35,10 @@ export class homePage {
     async goToDynamicControls() {
         await this.dynamicControlsLink.click();
     }
+
+    // This method clicks on the link to the Entry Ad page.
+    // It uses the Playwright locator to find the link by its role and name.
+    async goToEntryAd() {
+        await this.entryAdLink.click();
+    }   
 }
